@@ -1,61 +1,36 @@
-import React from 'react';
-
+import { Mic2, Music2, Radio } from 'lucide-react';
 const Home = () => {
-  const playlists = [
-    {
-      id: 1,
-      title: 'Chill Beats',
-      description: 'Relax and unwind with these smooth tunes.',
-      image: 'https://via.placeholder.com/300x200/4B8BBE/FFFFFF?text=Chill+Beats',
-    },
-    {
-      id: 2,
-      title: 'Top Hits',
-      description: 'The hottest hits of the week.',
-      image: 'https://via.placeholder.com/300x200/F49D1A/FFFFFF?text=Top+Hits',
-    },
-    {
-      id: 3,
-      title: 'Workout Playlist',
-      description: 'Get pumped up with these high-energy tracks.',
-      image: 'https://via.placeholder.com/300x200/F34C7E/FFFFFF?text=Workout+Playlist',
-    },
-  ];
-
-  const genres = [
-    { name: 'Pop', color: '#FF3E30' },
-    { name: 'Hip-Hop', color: '#D81B60' },
-    { name: 'Rock', color: '#3C9BE2' },
-    { name: 'Jazz', color: '#FFB300' },
-    { name: 'Classical', color: '#6F35A5' },
-  ];
-
   return (
-    <div className="p-8 bg-blue-300">
-      <div className="relative h-64 mb-8 overflow-hidden rounded-lg">
-       
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
-        <div className="absolute inset-0 flex items-center justify-center text-center text-white">
-          <h1 className="text-4xl font-bold">Discover Your Sound</h1>
-          {/* <p className="mt-2 text-lg">Explore thousands of songs and playlists tailored just for you.</p> */}
-        </div>
-      </div>
-      <h2 className="text-3xl font-semibold mb-4">Featured Playlists</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-        {playlists.map((playlist) => (
-          <div key={playlist.id} className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105">
-            <img src={playlist.image} alt={playlist.title} className="w-full h-40 object-cover" />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold">{playlist.title}</h3>
-              <p className="text-gray-600">{playlist.description}</p>
-              <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-                Listen
-              </button>
-            </div>
+    <div className="p-6">
+      <h2 className="text-5xl font-bold text-white mb-6">
+        Welcome to <span className="text-purple-400">MusicVerse</span>
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        {[
+          { icon: <Mic2 size={24} />, title: 'Voice Match', desc: 'Find songs by best matches' },
+          { icon: <Music2 size={24} />, title: 'Smart Mix', desc: 'AI-powered playlist creation' },
+          { icon: <Radio size={24} />, title: 'Live Sessions', desc: 'Join live listening parties' }
+        ].map((feature, index) => (
+          <div key={index} className="bg-purple-900 backdrop-blur-sm rounded-xl p-6 hover:bg-purple-900/40 transition-all cursor-pointer">
+            <div className="text-purple-400 mb-4">{feature.icon}</div>
+            <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+            <p className="text-gray-300">{feature.desc}</p>
           </div>
         ))}
       </div>
-      
+
+      {/* <div className="mb-8">
+        <h3 className="text-2xl font-bold text-white mb-4">Recently Played</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          {[...Array(6)].map((_, index) => (
+            <div key={index} className="bg-purple-900/20 p-4 rounded-lg hover:bg-purple-900/30 transition-all cursor-pointer">
+              <div className="w-full aspect-square bg-purple-800 rounded-md mb-4"></div>
+              <h4 className="text-white font-medium truncate">Playlist {index + 1}</h4>
+              <p className="text-gray-400 text-sm truncate">Various Artists</p>
+            </div>
+          ))}
+        </div>
+      </div> */}
     </div>
   );
 };
