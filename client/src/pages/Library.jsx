@@ -113,7 +113,7 @@ const Playlist = () => {
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Your Playlist</h1>
+      <h1 className="text-3xl font-bold mb-6 text-white">Your Playlist</h1>
       
       {error && (
         <div className="flex items-center bg-red-500 text-white p-4 rounded-lg mb-4">

@@ -17,9 +17,9 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center space-x-4">
-        <button className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors">
+        {/* <button className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors">
           Upgrade 
-        </button>
+        </button> */}
 
 
         <button className="text-white p-2 hover:bg-black/20 rounded-full">
