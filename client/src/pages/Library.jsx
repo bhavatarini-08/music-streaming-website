@@ -23,8 +23,6 @@ const Playlist = () => {
 
   useEffect(() => {
     fetchSongs();
-    
-    // Cleanup function
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -72,16 +70,12 @@ const Playlist = () => {
   const togglePlay = async (song) => {
     try {
       if (currentlyPlaying && currentlyPlaying.id === song.id) {
-        // Pause the current song
         audioRef.current.pause();
         setCurrentlyPlaying(null);
       } else {
-        // Stop the current song if there is one
         if (audioRef.current) {
           audioRef.current.pause();
         }
-        
-        // Play the new song
         audioRef.current.src = song.audioUrl;
         
         try {
